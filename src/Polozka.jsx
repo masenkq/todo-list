@@ -1,0 +1,35 @@
+function Polozka({ ukol, naSmazani, naPrepnuti }) {
+  return (
+    <div className={`polozka ${ukol.hotovo ? 'splneno' : ''}`}>
+      <div className="obsah-polozky">
+        <input 
+          type="checkbox" 
+          checked={ukol.hotovo} 
+          onChange={() => naPrepnuti(ukol.id)} 
+          className="muj-checkbox"
+        />
+        
+        <div className="texty">
+          <span className="nazev">{ukol.nazev}</span>
+          {/* Zobrazím popis, jen pokud nějaký existuje */}
+          {ukol.popis && <span className="popis">{ukol.popis}</span>}
+          <small className="kategorie">{ukol.kategorie}</small>
+        </div>
+      </div>
+
+      <button 
+        className="btn-smazat" 
+        onClick={() => naSmazani(ukol.id)}
+        title="Smazat úkol"
+      >
+        {/* SVG Ikona koše */}
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="3 6 5 6 21 6"></polyline>
+          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+        </svg>
+      </button>
+    </div>
+  );
+}
+
+export default Polozka;
