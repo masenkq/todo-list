@@ -6,16 +6,7 @@ import Filtry from './Filtry';
 import './App.css'; 
 
 function App() {
-  const [ukoly, setUkoly] = useState([
-    { 
-      id: uuidv4(), 
-      nazev: "Koupit sešity", 
-      popis: "Velký formát A4, linkované",
-      kategorie: "škola", 
-      hotovo: false 
-    }
-  ]);
-
+  const [ukoly, setUkoly] = useState([]);
   const [aktualniFiltr, setAktualniFiltr] = useState('vsechno');
   const [kategorieFiltr, setKategorieFiltr] = useState('vse');
 
@@ -57,7 +48,7 @@ function App() {
   });
 
   const pocetZbyvajicich = ukoly.filter(u => !u.hotovo).length;
-
+//tohle, abych tma nemela zbyva 1 ukolu ale ukol 
   const getSklonovani = (pocet) => {
     if (pocet === 1) return 'úkol';
     if (pocet >= 2 && pocet <= 4) return 'úkoly';

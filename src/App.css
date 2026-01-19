@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: #fff0f3; 
+  background-color: white;
   font-family: sans-serif;
   color: #333;
 }
@@ -10,15 +10,15 @@ body {
   max-width: 500px;
   margin: 40px auto; 
   padding: 25px;
-  border-radius: 20px;
-  border: 2px solid #ffccd5;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+  border-radius: 15px;
+  border: 1px solid #ddd;
 }
 
 h1 {
   text-align: center;
-  color: #555;
+  color: #444;
   margin-top: 0;
+  font-weight: normal;
 }
 
 .muj-formular {
@@ -27,8 +27,8 @@ h1 {
   gap: 10px;
   margin-bottom: 25px;
   padding: 15px;
-  background-color: #fff5f7;
-  border-radius: 15px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
 }
 
 .vstupy input {
@@ -36,8 +36,8 @@ h1 {
   padding: 10px;
   margin-bottom: 8px;
   box-sizing: border-box; 
-  border: 1px solid #ffccd5;
-  border-radius: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
 }
 
 .ovladani-formular {
@@ -47,8 +47,8 @@ h1 {
 
 .ovladani-formular select {
   padding: 10px;
-  border: 1px solid #ffccd5;
-  border-radius: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
   background: white;
   flex: 1;
 }
@@ -56,16 +56,16 @@ h1 {
 .ovladani-formular button {
   flex: 1;
   padding: 10px;
-  background-color: #b0f2c2; 
-  border: none;
-  border-radius: 8px;
+  background-color: #e6fcf5;
+  border: 1px solid #c3fae8;
+  border-radius: 6px;
   font-weight: bold;
-  color: #2d5c36;
+  color: #0ca678;
   cursor: pointer;
 }
 
 .ovladani-formular button:hover {
-  background-color: #98e6ad;
+  background-color: #c3fae8;
 }
 
 .ovladaci-panel {
@@ -74,7 +74,7 @@ h1 {
   align-items: center;
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 1px dashed #ffccd5;
+  border-bottom: 1px solid #eee;
 }
 
 .skupina-tlacitek button {
@@ -82,21 +82,24 @@ h1 {
   border: 1px solid #eee;
   padding: 6px 12px;
   margin-right: 5px;
-  border-radius: 15px;
+  border-radius: 20px;
   cursor: pointer;
+  color: #666;
 }
 
 .skupina-tlacitek button.aktivni-btn {
-  background-color: #ffccd5;
+  background-color: #f1f1f1;
   font-weight: bold;
-  border-color: #ffccd5;
+  color: #333;
+  border-color: #ddd;
 }
 
 .filtr-kategorie {
   padding: 6px;
-  border-radius: 8px;
+  border-radius: 6px;
   border: 1px solid #eee;
   background: white;
+  color: #555;
 }
 
 .polozka {
@@ -104,22 +107,25 @@ h1 {
   justify-content: space-between;
   align-items: center;
   background: white;
-  border: 1px solid #eee;
-  padding: 12px;
-  margin-bottom: 8px;
-  border-radius: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 12px 5px;
+  margin-bottom: 0;
+}
+
+.polozka:last-child {
+  border-bottom: none;
 }
 
 .obsah-polozky {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 12px;
 }
 
 .muj-checkbox {
-  margin-top: 5px;
+  margin-top: 4px;
   cursor: pointer;
-  accent-color: #ff8fa3;
+  accent-color: #aaa;
 }
 
 .texty {
@@ -128,12 +134,13 @@ h1 {
 }
 
 .nazev {
-  font-weight: bold;
+  font-weight: 500;
+  color: #333;
 }
 
 .popis {
   font-size: 0.85rem;
-  color: #777;
+  color: #888;
 }
 
 .kategorie {
@@ -143,8 +150,7 @@ h1 {
 }
 
 .polozka.splneno {
-  background-color: #fcfcfc;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .polozka.splneno .nazev, 
@@ -153,28 +159,30 @@ h1 {
 }
 
 .btn-smazat {
-  background: #ffe6ea;
+  background: transparent;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  padding: 5px 8px;
-  color: #d6336c;
+  padding: 5px;
+  color: #ff8787;
+  font-size: 1.2rem;
 }
 
 .btn-smazat:hover {
-  background-color: #ffccd5;
+  color: #e03131;
+  background-color: #fff5f5;
+  border-radius: 5px;
 }
 
 .statistika {
   text-align: center;
-  color: #888;
-  font-size: 0.9rem;
+  color: #999;
+  font-size: 0.85rem;
   margin-bottom: 15px;
 }
 
 .prazdny-seznam {
   text-align: center;
-  color: #bbb;
+  color: #ccc;
   font-style: italic;
-  margin-top: 20px;
+  margin-top: 30px;
 }

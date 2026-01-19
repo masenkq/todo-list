@@ -2,7 +2,7 @@ function Filtry({ aktualni, nastavFiltr, aktualniKat, nastavKat }) {
   return (
     <div className="ovladaci-panel">
       
-      {/*Tlačítka pro stav */}
+      
       <div className="skupina-tlacitek">
         <button 
           className={aktualni === 'vsechno' ? 'aktivni-btn' : ''} 
@@ -24,7 +24,6 @@ function Filtry({ aktualni, nastavFiltr, aktualniKat, nastavKat }) {
         </button>
       </div>
 
-      {/*Výběr kategorie*/}
       <select 
         value={aktualniKat} 
         onChange={(e) => nastavKat(e.target.value)}

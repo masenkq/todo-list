@@ -8,3 +8,4 @@ npm run dev
 
 Architektura
 Hlavni stranka kde jsou zobrazovany ukoly drzi komponenta App.jsx pomoci useState. Data a funkce posilam do ostatnich komponent (Formular, Filtry, SeznamUkolu) pres props. Styly jsou ciste CSS.
+

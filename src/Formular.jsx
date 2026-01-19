@@ -10,7 +10,7 @@ function Formular({ funkceNaPridani }) {
     if (!nazev.trim()) return;
 
     funkceNaPridani(nazev, popis, kategorie);
-
+    //kdyz uzivatel napise jeden ukol a aodesle tak policka hned budpu prazdna aby mohl psat uz dalsi ukol
     setNazev('');
     setPopis('');
   };
@@ -20,7 +20,7 @@ function Formular({ funkceNaPridani }) {
       <div className="vstupy">
         <input
           type="text"
-          placeholder="Název úkolu..."
+          placeholder="Co musite udelat?"
           value={nazev}
           onChange={(e) => setNazev(e.target.value)}
           className="input-nazev"
@@ -28,7 +28,7 @@ function Formular({ funkceNaPridani }) {
         
         <input
           type="text"
-          placeholder="Popis (volitelné)..."
+          placeholder="Pridejte popis"
           value={popis}
           onChange={(e) => setPopis(e.target.value)}
           className="input-popis"

@@ -6,10 +6,9 @@ import Filtry from './Filtry';
 import './App.css'; 
 
 function Aplikace() {
-//neco cvicneho, co se tam bude zobrazovat, pridat vic pak!!!!
-    const [ukoly, setUkoly] = useState([
-    { id: uuidv4(), nazev: "Koupit mléko", kategorie: "nákup", hotovo: false }
-  ]);
+
+    const [ukoly, setUkoly] = useState([]);
+ 
 
   //Podle čeho zrovna filtruju? (výchozí je 'vsechno')
   const [aktualniFiltr, setAktualniFiltr] = useState('vsechno');
@@ -25,13 +24,15 @@ function Aplikace() {
   };
 
   const smazatUkol = (idKeSmazani) => {
-    // nechavam  jen ty ukoly, co maji jene ID než to co chci smazat.
+    // nechavam  jen ty ukoly, co maji jine ID než to co chci smazat.
+    //pomci filter se udela novy seznam ktery bude s temi ID co se nerovnaji id ke smazani
     setUkoly(ukoly.filter(ukol => ukol.id !== idKeSmazani));
   };
 
-//jeste si to projit!!!
+
   const prepnoutStav = (idKPrepnuti) => {
-    // Projdu pole mapem a změním jen ten jeden konkrétní úkol.
+    // Projdu pole mapem a změním jen ten jeden konkrétní úkol na ktery jsem klikla, tomu 
+    // zmenim stav na oapcny.
     setUkoly(ukoly.map(ukol => {
       if (ukol.id === idKPrepnuti) {
         return { ...ukol, hotovo: !ukol.hotovo }; 
@@ -39,13 +40,14 @@ function Aplikace() {
       return ukol; 
     }));
   };
-
+//filtruju podle dokoncene a nedokocene
  const filtrovaneUkoly = ukoly.filter(ukol => {
     if (aktualniFiltr === 'dokoncene') return ukol.hotovo === true;
     if (aktualniFiltr === 'nedokoncene') return ukol.hotovo === false;
     return true; 
   });
 
+  //Zbývá splnit celkem: 1 úkol je tady to
   const pocetZbyvajicich = ukoly.filter(u => !u.hotovo).length;
 
   return (
@@ -60,7 +62,6 @@ function Aplikace() {
         aktualni={aktualniFiltr} 
         nastavFiltr={setAktualniFiltr} 
       />
-
       <p className="statistika">Zbývá splnit: <strong>{pocetZbyvajicich}</strong> úkolů</p>
 
       <SeznamUkolu 
